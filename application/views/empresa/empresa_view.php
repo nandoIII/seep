@@ -1,134 +1,166 @@
-<div>
-    <div>
-        <h2 style="font-weight: 600;letter-spacing: 1px;padding-right: 5px;">EMPRESAS</h2>
-    </div>
-    <div class="table-responsive">
-        <table id="list_load" class="table table-hover table-bordered "> <!-- table-striped -->
-            <thead>
-                <tr style="background-color: #EBEBEB">
-                    <th>#</th>
-                    <th>Nombre</th>
-                    <th>Nit</th>
-                    <th>Direccion</th>
-                    <th>Telefono</th>
-                    <th>Puntaje</th>
-                    <?php echo in_array('empresa/edit', $roles) || in_array('empresa/trash', $roles) ? '<th>Actions</th>' : ''; ?>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $i = 1;
-                foreach ($empresas as $empresas => $row) {
-                    echo '<tr id="empresa_' . $row['idempresa'] . '">';
-                    echo '<td>' . $i++ . '</td>';
-                    echo '<td>' . $row['nombre'] . '</td>';
-                    echo '<td>' . $row['nit'] . '</td>';
-                    echo '<td>' . $row['direccion'] . '</td>';
-                    echo '<td>' . $row['telefono'] . '</td>';
+<div class="container-fluid">
 
-                    if ($row['puntaje'] == '') {
-                        echo '<td><a href="' . site_url('empresa/evaluar/' . $row['idempresa']) . '">Evaluar</a>' . '</td>';
-                    } else {
-                        $bgcolor = '';
-                        if ($row['puntaje'] <= 39) {
-                            $bgcolor = '#DF0101';
-                        } elseif ($row['puntaje'] >= 40 && $row['puntaje'] <= 59) {
-                            $bgcolor = '#F7FE2E';
-                        } else {
-                            $bgcolor = '#2EFE2E';
-                        }
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Empresas</a>
+        </li>
+        <li class="breadcrumb-item active">Listado</li>
+    </ol>
 
-                        if (in_array("empresa/evaluar", $roles)) {
-                            echo '<td bgcolor="' . $bgcolor . '"><a href="' . site_url('empresa/graphics/' . $row['idempresa']) . '">' . $row['puntaje'] . '%</a></td>';
-                        } else {
-                            echo '<td bgcolor="' . $bgcolor . '">' . $row['puntaje'] . '</td>';
-                        }
-                    }
-
-                    echo in_array('empresa/edit', $roles) || in_array('empresa/trash', $roles) ? '<td>' : '';
-                    echo in_array('empresa/edit', $roles) ? '<a href="' . site_url('empresa/edit') . '/' . $row['idempresa'] . '">Editar</a>' : '';
-                    echo in_array('empresa/trash', $roles) ? '&nbsp; <a id="' . $row['idempresa'] . '" class="trash">Trash</a>' : '';
-                    echo in_array('empresa/edit', $roles) || in_array('empresa/trash', $roles) ? '</td>' : '';
-                    echo '</tr>';
-                }
-                ?>
-            </tbody>
-
-        </table>
-    </div>
-
-
+    <!-- Icon Cards-->
     <div class="row">
-        <div class="col-md-12 text-center">
-            <?php echo $this->pagination->create_links() ?>
+        <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-primary o-hidden h-100">
+                <div class="card-body">
+                    <div class="card-body-icon">
+                        <i class="fas fa-fw fa-comments"></i>
+                    </div>
+                    <div class="mr-5">26 Por Evaluar!</div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                    <span class="float-left">View Details</span>
+                    <span class="float-right">
+                        <i class="fas fa-angle-right"></i>
+                    </span>
+                </a>
+            </div>
         </div>
-    </div> 
-</div>
+        <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-warning o-hidden h-100">
+                <div class="card-body">
+                    <div class="card-body-icon">
+                        <i class="fas fa-fw fa-list"></i>
+                    </div>
+                    <div class="mr-5">11 New Tasks!</div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                    <span class="float-left">View Details</span>
+                    <span class="float-right">
+                        <i class="fas fa-angle-right"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-success o-hidden h-100">
+                <div class="card-body">
+                    <div class="card-body-icon">
+                        <i class="fas fa-fw fa-shopping-cart"></i>
+                    </div>
+                    <div class="mr-5">123 New Orders!</div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                    <span class="float-left">View Details</span>
+                    <span class="float-right">
+                        <i class="fas fa-angle-right"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-danger o-hidden h-100">
+                <div class="card-body">
+                    <div class="card-body-icon">
+                        <i class="fas fa-fw fa-life-ring"></i>
+                    </div>
+                    <div class="mr-5">13 New Tickets!</div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                    <span class="float-left">View Details</span>
+                    <span class="float-right">
+                        <i class="fas fa-angle-right"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
 
-<script>
-    $(function () {
-        $('#list_load tbody tr').on('click', function (event) {
-            $(this).addClass('highlight').siblings().removeClass('highlight');
-        });
+    <!-- Area Chart Example-->
+    <!--
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-chart-area"></i>
+            Area Chart Example</div>
+        <div class="card-body">
+            <canvas id="myAreaChart" width="100%" height="30"></canvas>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
 
-        $('body').on('click', '.po', function (evt) {
-            evt.preventDefault();
-            var load_id = $(this).data('load_id');
-            var editHtml = '<ul><li data-load_edit="' + load_id + '">Edit</li></ul>';
-//            $('#abc').append(editHtml);
-            var popover = $(this).attr('id');
-            $('#popover_content ul li a.editLink').attr('href', 'load/update/' + popover)
+    -->
+    
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Empresas</div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Nit</th>
+                            <th>Direccion</th>
+                            <th>Telefono</th>
+                            <th>Puntaje</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Nit</th>
+                            <th>Direccion</th>
+                            <th>Telefono</th>
+                            <th>Puntaje</th>
+                            <th>Accion</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <?php
+                        $i = 1;
+                        foreach ($empresas as $empresas => $row) {
+                            echo '<tr id="empresa_' . $row['idempresa'] . '">';
+                            // echo '<td>' . $i++ . '</td>';
+                            echo '<td>' . $row['nombre'] . '</td>';
+                            echo '<td>' . $row['nit'] . '</td>';
+                            echo '<td>' . $row['direccion'] . '</td>';
+                            echo '<td>' . $row['telefono'] . '</td>';
 
-            $(this).popover({
-                "trigger": "manual",
-                "html": "true",
-                "title": 'Load Options # ' + $(this).html() + '<span style="margin-left:15px;" class="pull-right"><a href="#" onclick="$(&quot;#' + popover + '&quot;).popover(&quot;toggle&quot;);" class="text-danger popover-close" data-bypass="true" title="Close"><i class="fa fa-close"></i>X</a></span>',
-                "content": $('#popover_content').html()
-//                "content":'<ul><li><a data-id="4" title="Edit this Load" href="load/update/'+popover+'"><i class="icon-pencil"></i> Edit</a> </li></ul>'
-            });
-            $(this).popover('toggle');
+                            if ($row['puntaje'] == '') {
+                                echo '<td><a href="' . site_url('empresa/evaluar/' . $row['idempresa']) . '">Evaluar</a>' . '</td>';
+                            } else {
+                                $bgcolor = '';
+                                if ($row['puntaje'] <= 39) {
+                                    $bgcolor = '#DF0101';
+                                } elseif ($row['puntaje'] >= 40 && $row['puntaje'] <= 59) {
+                                    $bgcolor = '#F7FE2E';
+                                } else {
+                                    $bgcolor = '#2EFE2E';
+                                }
 
-        });
+                                if (in_array("empresa/evaluar", $roles)) {
+                                    echo '<td bgcolor="' . $bgcolor . '"><a href="' . site_url('empresa/graphics/' . $row['idempresa']) . '">' . $row['puntaje'] . '%</a></td>';
+                                } else {
+                                    echo '<td bgcolor="' . $bgcolor . '">' . $row['puntaje'] . '</td>';
+                                }
+                            }
 
-        $('body').on('click', '.trash', function (evt) {
-            evt.preventDefault();
-            var empresa = $(this);
-            var id = empresa.attr('id');
-            var r = confirm("Confirm trashing empresa?");
-
-            if (r == true) {
-                $.ajax({
-                    type: "POST",
-                    url: 'empresa/change_status/' + id + '/' + 0,
-                    async: true,
-                    dataType: "json",
-                    beforeSend: function () {
-                        $('#result_destination').html('Loading...');
-                        $('#result_destination').show();
-                    },
-                    success: function (data) {
-                        if (data.status == 1) {
-                            $('#empresa_' + id).remove();
-                            console.log('empresa deleted');
-                        } else {
-                            alert('User could not be trashed. Please contact administrator.');
+                            echo in_array('empresa/edit', $roles) || in_array('empresa/trash', $roles) ? '<td>' : '';
+                            echo in_array('empresa/edit', $roles) ? '<a href="' . site_url('empresa/edit') . '/' . $row['idempresa'] . '">Editar</a>' : '';
+                            echo in_array('empresa/trash', $roles) ? '&nbsp; <a id="' . $row['idempresa'] . '" class="trash">Trash</a>' : '';
+                            echo in_array('empresa/edit', $roles) || in_array('empresa/trash', $roles) ? '</td>' : '';
+                            echo '</tr>';
                         }
-                    }
-                });
-            }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
 
-        });
-
-        // Get loads filtered
-        $('body').on('click', '#load_search', function (evt) {
-            evt.preventDefault();
-            searchEmpresa();
-        });
-
-    });
-
-    function searchEmpresa() {
-        window.location.replace("http://stackoverflow.com");
-    }
-
-</script>
+</div>
+<!-- /.container-fluid -->
