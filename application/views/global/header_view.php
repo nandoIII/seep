@@ -9,19 +9,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Empresas - SEEP</title>
+    <title>Sistema para evaluacion de empresas y proveedores</title>
 
     <!-- Bootstrap core CSS-->
-    <link href="public/third-party/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <script src="<?php echo base_url() ?>public/third-party/jquery/jquery.min.js"></script>
+    <link href="<?php echo base_url() ?>public/third-party/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template-->
-    <link href="public/third-party/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url() ?>public/third-party/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
     <!-- Page level plugin CSS-->
-    <link href="public/third-party/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>public/third-party/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="public/css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>public/css/sb-admin.css" rel="stylesheet">
 
   </head>
 
@@ -29,7 +30,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="index.html">SEEP</a>
+      <a class="navbar-brand mr-1" href="<?php echo site_url('empresa'); ?>">SEEP</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>

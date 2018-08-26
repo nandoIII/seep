@@ -26,13 +26,13 @@
 
         <div class="container">
             <div class="card card-login mx-auto mt-5">
-                <div class="card-header">SEEP - Login</div>
+                <div class="card-header">SEEP - Iniciar Sesion</div>
                 <div class="card-body">
                     <form id="login_form" class="form-horizontal" method="POST" action="<?php echo site_url('user/login') ?>">
                         <div class="form-group">
                             <div class="form-label-group">
                                 <input type="text" id="inputEmail" name="login" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
-                                <label for="inputEmail">Email address</label>
+                                <label for="inputEmail">Usuario</label>
                             </div>
                         </div>
                         <div class="form-group">

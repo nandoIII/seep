@@ -148,10 +148,11 @@
                                 }
                             }
 
-                            echo in_array('empresa/edit', $roles) || in_array('empresa/trash', $roles) ? '<td>' : '';
-                            echo in_array('empresa/edit', $roles) ? '<a href="' . site_url('empresa/edit') . '/' . $row['idempresa'] . '">Editar</a>' : '';
+                            echo in_array('empresa/editar', $roles) || in_array('empresa/trash', $roles) ? '<td>' : '';
+                            echo in_array('empresa/editar', $roles) ? '<a href="' . site_url('empresa/editar') . '/' . $row['idempresa'] . '">Editar</a>' : '';
+                            echo in_array('empresa/editar', $roles) ? '<a href="' . site_url('empresa/editar_test') . '/' . $row['idempresa'] . '">Editar Test</a>' : '';
                             echo in_array('empresa/trash', $roles) ? '&nbsp; <a id="' . $row['idempresa'] . '" class="trash">Trash</a>' : '';
-                            echo in_array('empresa/edit', $roles) || in_array('empresa/trash', $roles) ? '</td>' : '';
+                            echo in_array('empresa/editar', $roles) || in_array('empresa/trash', $roles) ? '</td>' : '';
                             echo '</tr>';
                         }
                         ?>
