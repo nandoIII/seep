@@ -13,7 +13,7 @@
     $(function () {
         $.ajax({
             type: "POST",
-            url: "<?php echo site_url('empresa/get_test/' . $idempresa . '/') ?>",
+            url: "<?php echo site_url('empresa/get_actividades_test/' . $idempresa . '/') ?>",
             async: true,
             dataType: "json",
             beforeSend: function () {
@@ -23,7 +23,8 @@
             success: function (data) {
                 if (data) {
                     //$('#driver_' + id).remove();
-                    drawGraphic(data);
+                    var datasets = crearDatasets(data);
+                    drawGraphic(datasets);
                 } else {
                     alert('Driver could not be trashed. Please contact administrator.');
                 }
@@ -31,7 +32,7 @@
         });
     });
 
-    function drawGraphic(data) {
+    function drawGraphic(datasets) {
         var options = {
             title: {
                 display: true,
@@ -52,16 +53,7 @@
             labels: [
                 "Estrategia", "Proceso", "Organizacion", "Articulacion", "Aprendizaje"
             ],
-            datasets: [{
-                    label: "Areas de Innovacion",
-                    backgroundColor: "rgba(179,181,198,0.2)",
-                    borderColor: "rgba(179,181,198,1)",
-                    pointBackgroundColor: "rgba(179,181,198,1)",
-                    pointBorderColor: "#fff",
-                    pointHoverBackgroundColor: "#fff",
-                    pointHoverBorderColor: "rgba(179,181,198,1)",
-                    data: data
-                }]
+            datasets: datasets
         };
 
         var ctx = document.getElementById("canvas");
@@ -72,6 +64,30 @@
         });
 
         //console.log(myRadarChart);    
+    }
+
+    function crearDatasets(data) {
+        var colores = ['rgba(00,255,00,0.1)', 'rgba(0,255,255,0.1)', '#01DF01', '#FF8000', '#8A0808'];
+        var borderColor = ['#00FF00','#00FFFF']
+        var datasets = [];
+        var label_name = '';
+        for (var i = 0; i < data.length; i++) {
+            if (i == 0) {
+                label_name = 'Diagnostico';
+            } else {
+                label_name = 'Actividad ' + i;
+            }
+
+            var valor = {
+                label: label_name,
+                backgroundColor: colores[i],
+                borderColor: borderColor[i],
+                borderWidth: 2,
+                data: data[i]
+            };
+            datasets[i] = valor;
+        }
+        return datasets;
     }
 </script>
 <?php

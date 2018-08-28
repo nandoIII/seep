@@ -7,7 +7,7 @@
         <li class="breadcrumb-item active">Editar Evaluacion de Emrpresa <?php echo $empresa['nombre'] ?></li>
     </ol>    
 
-    <form id="register_form" class="form-horizontal" method="POST" action="<?php echo site_url('empresa/actualizar_test/' . $empresa_test['idempresa_test']) ?>">
+    <form id="register_form" class="form-horizontal" method="POST" action="<?php echo site_url('empresa/actualizar_test/' . $idtest) ?>">
         <input type="hidden" name="idempresa_test" value="<?php echo $empresa_test['idempresa_test'] ?>">	    
 
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -1254,7 +1254,7 @@
                 </div>                         
 
             </div>
-            
+
             <div class="tab-pane fade" id="datos_finales" role="tabpanel" aria-labelledby="contact-tab">
                 <div class="control-group">
                     <label class="control-label">Código CIIU</label>

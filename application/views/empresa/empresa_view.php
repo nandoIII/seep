@@ -32,7 +32,7 @@
                     <div class="card-body-icon">
                         <i class="fas fa-fw fa-list"></i>
                     </div>
-                    <div class="mr-5">11 New Tasks!</div>
+                    <div class="mr-5">11 En Proceso!</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="#">
                     <span class="float-left">View Details</span>
@@ -48,7 +48,7 @@
                     <div class="card-body-icon">
                         <i class="fas fa-fw fa-shopping-cart"></i>
                     </div>
-                    <div class="mr-5">123 New Orders!</div>
+                    <div class="mr-5">123 Innovadoras!</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="#">
                     <span class="float-left">View Details</span>
@@ -64,7 +64,7 @@
                     <div class="card-body-icon">
                         <i class="fas fa-fw fa-life-ring"></i>
                     </div>
-                    <div class="mr-5">13 New Tickets!</div>
+                    <div class="mr-5">13 No Innovadoras!</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="#">
                     <span class="float-left">View Details</span>
@@ -105,7 +105,7 @@
                             <th>Direccion</th>
                             <th>Telefono</th>
                             <th>Puntaje</th>
-                            <th>Salary</th>
+                            <th>Accion</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -150,7 +150,9 @@
 
                             echo in_array('empresa/editar', $roles) || in_array('empresa/trash', $roles) ? '<td>' : '';
                             echo in_array('empresa/editar', $roles) ? '<a href="' . site_url('empresa/editar') . '/' . $row['idempresa'] . '">Editar</a>' : '';
-                            echo in_array('empresa/editar', $roles) ? '<a href="' . site_url('empresa/editar_test') . '/' . $row['idempresa'] . '">Editar Test</a>' : '';
+                            echo in_array('empresa/editar', $roles) ? '<a href="' . site_url('empresa/editar_test') . '/' . $row['idempresa'] . '"> Editar Test </a>' : '';
+                            echo in_array('empresa/editar', $roles) ? '<a href="' . site_url('empresa/getRadarDiagnostico') . '/' . $row['idempresa'] . '"> Radar </a>' : '';
+                            echo in_array('empresa/editar', $roles) ? '<a href="' . site_url('empresa/get_actividades') . '/' . $row['idempresa'] . '"> Actividades </a>' : '';
                             echo in_array('empresa/trash', $roles) ? '&nbsp; <a id="' . $row['idempresa'] . '" class="trash">Trash</a>' : '';
                             echo in_array('empresa/editar', $roles) || in_array('empresa/trash', $roles) ? '</td>' : '';
                             echo '</tr>';
