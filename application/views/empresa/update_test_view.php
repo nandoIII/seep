@@ -12,10 +12,10 @@
 
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Caracterizacion</a>
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#caracterizacion" role="tab" aria-controls="home" aria-selected="true">Caracterizacion</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Estrategia</a>
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#estrategia" role="tab" aria-controls="profile" aria-selected="false">Estrategia</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="contact-tab" data-toggle="tab" href="#procesos" role="tab" aria-controls="procesos" aria-selected="false">Procesos</a>
@@ -31,13 +31,10 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="contact-tab" data-toggle="tab" href="#conocimiento" role="tab" aria-controls="conocimiento" aria-selected="false">Conocimiento</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#datos_finales" role="tab" aria-controls="datos_finales" aria-selected="false">Datos Finales</a>
-            </li>               
+            </li>             
         </ul>
         <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="tab-pane fade show active" id="caracterizacion" role="tabpanel" aria-labelledby="home-tab">
                 <div class="control-group">
                     <label>Defina el tamaño de su organización por número de empleados a partir de los siguientes rangos</label>
                     <div>
@@ -104,9 +101,68 @@
                             <label><input type="radio" <?php echo $empresa_test['caract_5'] == 4 ? 'checked="checked"' : '' ?> name="caract_5" value="4">Mayor al 46%</label>
                         </div>                                 
                     </div>
-                </div>              
+                </div> 
+                <div class="control-group">
+                    <label class="control-label">Código CIIU</label>
+                    <div class="controls">
+                        <input type="text" value="<?php echo $empresa_test['codigo_ciiu'] ?>" name="codigo_ciiu" class="input-xlarge"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Sitio Web</label>
+                    <div class="controls">
+                        <input type="text" value="<?php echo $empresa_test['sitio_web'] ?>" name="sitio_web" class="input-xlarge"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Direccion</label>
+                    <div class="controls">
+                        <input type="text" value="<?php echo $empresa_test['direccion'] ?>" name="direccion" class="input-xlarge"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Sector</label>
+                    <div class="controls">
+                        <select name="sector" class="form-control" id="sel1">
+                            <option value="A" <?php echo $empresa_test['sector'] == "A" ? 'selected' : '' ?>>A - Agricultura, ganaderia, caza, silvicultura y pesca</option>
+                            <option value="B" <?php echo $empresa_test['sector'] == "B" ? 'selected' : '' ?>>B - Explotacion de minas y canteras</option>
+                            <option value="C" <?php echo $empresa_test['sector'] == "C" ? 'selected' : '' ?>>C - Industrias manufactureras</option>
+                            <option value="D" <?php echo $empresa_test['sector'] == "D" ? 'selected' : '' ?>>D – Suministro de electricidad, gas, vapor y aire acondicionado</option>
+                            <option value="E" <?php echo $empresa_test['sector'] == "E" ? 'selected' : '' ?>>E – Distribución de agua; evacuación y tratamiento de aguas residuales, gestión de desechos y actividades de saneamiento ambiental</option>
+                            <option value="F" <?php echo $empresa_test['sector'] == "F" ? 'selected' : '' ?>>F – Construcción</option>
+                            <option value="G" <?php echo $empresa_test['sector'] == "G" ? 'selected' : '' ?>>G – Comercio al por mayor y al por menor; reparación de vehículos automotores y motocicletas</option>
+                            <option value="H" <?php echo $empresa_test['sector'] == "H" ? 'selected' : '' ?>>H – Transporte y almacenamiento</option>
+                            <option value="I" <?php echo $empresa_test['sector'] == "I" ? 'selected' : '' ?>>I – Alojamiento y servicios de comida</option>
+                            <option value="J" <?php echo $empresa_test['sector'] == "J" ? 'selected' : '' ?>>J – Información y comunicaciones</option>
+                            <option value="K" <?php echo $empresa_test['sector'] == "K" ? 'selected' : '' ?>>K – Actividades financieras y de seguros</option>
+                            <option value="L" <?php echo $empresa_test['sector'] == "L" ? 'selected' : '' ?>>L – Actividades inmobiliarias</option>
+                            <option value="M" <?php echo $empresa_test['sector'] == "M" ? 'selected' : '' ?>>M – Actividades profesionales, científicas y técnicas</option>
+                            <option value="N" <?php echo $empresa_test['sector'] == "N" ? 'selected' : '' ?>>N – Actividades de servicios administrativos y de apoyo</option>
+                            <option value="O" <?php echo $empresa_test['sector'] == "O" ? 'selected' : '' ?>>O – Administración pública y defensa; planes de seguridad social de afiliación obligatoria</option>
+                            <option value="P" <?php echo $empresa_test['sector'] == "P" ? 'selected' : '' ?>>P – Educación</option>
+                            <option value="Q" <?php echo $empresa_test['sector'] == "Q" ? 'selected' : '' ?>>Q – Actividades de atención de la salud humana y de asistencia social</option>
+                            <option value="R" <?php echo $empresa_test['sector'] == "R" ? 'selected' : '' ?>>R – Actividades artísticas, de entretenimiento y recreación</option>
+                            <option value="S" <?php echo $empresa_test['sector'] == "S" ? 'selected' : '' ?>>S – Otras actividades de servicios</option>
+                            <option value="T" <?php echo $empresa_test['sector'] == "T" ? 'selected' : '' ?>>T – Actividades de los hogares en calidad de empleadores; actividades no diferenciadas de los hogares individuales como productores de bienes y servicios para uso propio</option>
+                            <option value="U" <?php echo $empresa_test['sector'] == "U" ? 'selected' : '' ?>>U – Actividades de organizaciones y entidades extraterritoriales</option>
+                            <option value="V" <?php echo $empresa_test['sector'] == "V" ? 'selected' : '' ?>>V – Turismo</option>
+                        </select>
+                    </div>
+                </div> 
+
+                <div class="control-group">
+                    <label class="control-label">Usted está diligenciando este autodiagnóstico porque está aplicando a una convocatoria o programa de: (*)</label>
+                    <div class="controls">
+                        <select name="programa" class="form-control" id="sel1">
+                            <option <?php echo $empresa_test['programa'] == "Colciencias" ? 'selected' : '' ?>>Colciencias</option>
+                            <option <?php echo $empresa_test['programa'] == "iNNpulsa" ? 'selected' : '' ?>>iNNpulsa</option>
+                            <option <?php echo $empresa_test['programa'] == "Otra" ? 'selected' : '' ?>>Otra</option>
+                            <option <?php echo $empresa_test['programa'] == "Ninguna" ? 'selected' : '' ?>>Ninguna</option>
+                        </select>
+                    </div>
+                </div>                  
             </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="tab-pane fade" id="estrategia" role="tabpanel" aria-labelledby="profile-tab">
                 <div class="control-group">
                     <div class="span8">En la organización se realizan ejercicios periódicos de planeación de la innovación, que incluye planes de acción, objetivos, indicadores, responsables, presupuestos y mecanismos de control escritos.</div>
                     <div class="span4">
@@ -1255,67 +1311,6 @@
 
             </div>
             
-            <div class="tab-pane fade" id="datos_finales" role="tabpanel" aria-labelledby="contact-tab">
-                <div class="control-group">
-                    <label class="control-label">Código CIIU</label>
-                    <div class="controls">
-                        <input type="text" value="<?php echo $empresa_test['codigo_ciiu'] ?>" name="codigo_ciiu" class="input-xlarge"/>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">Sitio Web</label>
-                    <div class="controls">
-                        <input type="text" value="<?php echo $empresa_test['sitio_web'] ?>" name="sitio_web" class="input-xlarge"/>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">Direccion</label>
-                    <div class="controls">
-                        <input type="text" value="<?php echo $empresa_test['direccion'] ?>" name="direccion" class="input-xlarge"/>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">Sector</label>
-                    <div class="controls">
-                        <select name="sector" class="form-control" id="sel1">
-                            <option value="A" <?php echo $empresa_test['sector'] == "A" ? 'selected' : '' ?>>A - Agricultura, ganaderia, caza, silvicultura y pesca</option>
-                            <option value="B" <?php echo $empresa_test['sector'] == "B" ? 'selected' : '' ?>>B - Explotacion de minas y canteras</option>
-                            <option value="C" <?php echo $empresa_test['sector'] == "C" ? 'selected' : '' ?>>C - Industrias manufactureras</option>
-                            <option value="D" <?php echo $empresa_test['sector'] == "D" ? 'selected' : '' ?>>D – Suministro de electricidad, gas, vapor y aire acondicionado</option>
-                            <option value="E" <?php echo $empresa_test['sector'] == "E" ? 'selected' : '' ?>>E – Distribución de agua; evacuación y tratamiento de aguas residuales, gestión de desechos y actividades de saneamiento ambiental</option>
-                            <option value="F" <?php echo $empresa_test['sector'] == "F" ? 'selected' : '' ?>>F – Construcción</option>
-                            <option value="G" <?php echo $empresa_test['sector'] == "G" ? 'selected' : '' ?>>G – Comercio al por mayor y al por menor; reparación de vehículos automotores y motocicletas</option>
-                            <option value="H" <?php echo $empresa_test['sector'] == "H" ? 'selected' : '' ?>>H – Transporte y almacenamiento</option>
-                            <option value="I" <?php echo $empresa_test['sector'] == "I" ? 'selected' : '' ?>>I – Alojamiento y servicios de comida</option>
-                            <option value="J" <?php echo $empresa_test['sector'] == "J" ? 'selected' : '' ?>>J – Información y comunicaciones</option>
-                            <option value="K" <?php echo $empresa_test['sector'] == "K" ? 'selected' : '' ?>>K – Actividades financieras y de seguros</option>
-                            <option value="L" <?php echo $empresa_test['sector'] == "L" ? 'selected' : '' ?>>L – Actividades inmobiliarias</option>
-                            <option value="M" <?php echo $empresa_test['sector'] == "M" ? 'selected' : '' ?>>M – Actividades profesionales, científicas y técnicas</option>
-                            <option value="N" <?php echo $empresa_test['sector'] == "N" ? 'selected' : '' ?>>N – Actividades de servicios administrativos y de apoyo</option>
-                            <option value="O" <?php echo $empresa_test['sector'] == "O" ? 'selected' : '' ?>>O – Administración pública y defensa; planes de seguridad social de afiliación obligatoria</option>
-                            <option value="P" <?php echo $empresa_test['sector'] == "P" ? 'selected' : '' ?>>P – Educación</option>
-                            <option value="Q" <?php echo $empresa_test['sector'] == "Q" ? 'selected' : '' ?>>Q – Actividades de atención de la salud humana y de asistencia social</option>
-                            <option value="R" <?php echo $empresa_test['sector'] == "R" ? 'selected' : '' ?>>R – Actividades artísticas, de entretenimiento y recreación</option>
-                            <option value="S" <?php echo $empresa_test['sector'] == "S" ? 'selected' : '' ?>>S – Otras actividades de servicios</option>
-                            <option value="T" <?php echo $empresa_test['sector'] == "T" ? 'selected' : '' ?>>T – Actividades de los hogares en calidad de empleadores; actividades no diferenciadas de los hogares individuales como productores de bienes y servicios para uso propio</option>
-                            <option value="U" <?php echo $empresa_test['sector'] == "U" ? 'selected' : '' ?>>U – Actividades de organizaciones y entidades extraterritoriales</option>
-                            <option value="V" <?php echo $empresa_test['sector'] == "V" ? 'selected' : '' ?>>V – Turismo</option>
-                        </select>
-                    </div>
-                </div> 
-
-                <div class="control-group">
-                    <label class="control-label">Usted está diligenciando este autodiagnóstico porque está aplicando a una convocatoria o programa de: (*)</label>
-                    <div class="controls">
-                        <select name="programa" class="form-control" id="sel1">
-                            <option <?php echo $empresa_test['programa'] == "Colciencias" ? 'selected' : '' ?>>Colciencias</option>
-                            <option <?php echo $empresa_test['programa'] == "iNNpulsa" ? 'selected' : '' ?>>iNNpulsa</option>
-                            <option <?php echo $empresa_test['programa'] == "Otra" ? 'selected' : '' ?>>Otra</option>
-                            <option <?php echo $empresa_test['programa'] == "Ninguna" ? 'selected' : '' ?>>Ninguna</option>
-                        </select>
-                    </div>
-                </div>                
-            </div>
         </div>
         <div class="control-group">
             <div class="controls">

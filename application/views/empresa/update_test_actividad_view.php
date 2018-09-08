@@ -4,7 +4,7 @@
         <li class="breadcrumb-item">
             <a href="#">Empresas</a>
         </li>
-        <li class="breadcrumb-item active">Editar Evaluacion de Emrpresa <?php echo $empresa['nombre'] ?></li>
+        <li class="breadcrumb-item active">Editar Evaluacion de Actividad 1 - <?php echo $empresa['nombre'] ?></li>
     </ol>    
 
     <form id="register_form" class="form-horizontal" method="POST" action="<?php echo site_url('empresa/actualizar_test/' . $idtest) ?>">

@@ -1,38 +1,25 @@
-<div class="row">
+<div class="container-fluid">
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Usuarios</a>
+        </li>
+        <li class="breadcrumb-item active">Listado</li>
+    </ol>
 
-    <div id="dashboard-main" class="span12">
-<!--        <form id="create_note" class="form-horizontal" method="post" action="<?= site_url('api/create_note') ?>">
-            <div class="input-append">
-                <input tabindex="1" type="text" name="title" placeholder="Note Title" />
-                <input tabindex="3" type="submit" class="btn btn-success" value="Create" />
-            </div>
-
-            <div class="clearfix"></div>
-
-            <textarea tabindex="2" name="content"></textarea>
-
-        </form>-->
-
-        <div id="list_user">
-            <span class="ajax-loader-gray"></span>
+    <div class="card-body">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Usuarios
         </div>
-
-        <div id="category-actions">
-            <div id="category-button"><a style="outline: medium none;" hidefocus="true" href="<?php echo site_url('user/'); ?>"><img src="<?php echo base_url() ?>/public/img/images/users-bt-w.png" style=" width:40px; height:40px; margin-top:10px" alt="View All Loads" title="View All Loads"></a></div>
-            <div class="loads-title" id="category-title" style="height: 32px;padding-top: 15px;"><h2 style="font-weight: 600;letter-spacing: 1px;padding-right: 5px;">USERS</h2></div>
-            <div id="category-button"><a style="outline: medium none;" hidefocus="true" href="<?php echo site_url('user/'); ?>"><img src="<?php echo base_url() ?>/public/img/images/loads-list-bt-45w.png" width="45" height="70" alt="View All Loads"></a></div>
 
             <?php
             if (in_array("user/add", $roles)) {
                 ?>
-                <div id="category-button"><a style="outline: medium none;" hidefocus="true" href="<?php echo site_url('user/add'); ?>"><img src="<?php echo base_url() ?>/public/img/images/loads-add-bt-45w.png" width="45" height="70" alt="Add a Load"></a></div>
+                <div id="category-button"><a style="outline: medium none;" hidefocus="true" href="<?php echo site_url('user/add'); ?>">Add</a></div>
             <?php } ?>                 
 
-            <div id="category-button"></div>
-            <div id="category-search" class="search-customer"></div>
-            <div id="category-search" class="search-carrier"></div>
-            <div id="category-search" class="search-loads"></div>
-        </div>
+
 
         <div class="table-responsive">
             <table id="list_user" class="table table-hover table-bordered table-striped">

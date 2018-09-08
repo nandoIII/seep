@@ -17,21 +17,21 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Fecha</th>
-                            <th>Caracterizacion</th>
+                            <th>Fecha para Test</th>
                             <th>Estrategia</th>
                             <th>Proceso</th>
                             <th>Organizacion</th>
+                            <th>Articulacion</th>
                             <th>Accion</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Fecha</th>
-                            <th>Caracterizacion</th>
+                            <th>Fecha para Test</th>
                             <th>Estrategia</th>
                             <th>Proceso</th>
                             <th>Organizacion</th>
+                            <th>Articulacion</th>                            
                             <th>Accion</th>
                         </tr>
                     </tfoot>
@@ -42,10 +42,10 @@
                             echo '<tr>';
                             // echo '<td>' . $i++ . '</td>';
                             echo '<td>' . $row['fecha'] . '</td>';
-                            echo '<td>' . $row['caracterizacion'] . '</td>';
                             echo '<td>' . $row['estrategia'] . '</td>';
                             echo '<td>' . $row['proceso'] . '</td>';
                             echo '<td>' . $row['organizacion'] . '</td>';
+                            echo '<td>' . $row['articulacion'] . '</td>';
                             echo '<td><a href="' . site_url('empresa/editar_test_actividad') . '/' . $idempresa . '/' . $row['empresa_test_idempresa_test'] . '">Ver Test</a></td>';
                             echo '</tr>';
                         }

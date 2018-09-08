@@ -26,7 +26,7 @@
 
         <div class="container">
             <div class="card card-login mx-auto mt-5">
-                <div class="card-header">SEEP - Iniciar Sesion</div>
+                <div class="card-header">PMI - Iniciar Sesion</div>
                 <div class="card-body">
                     <form id="login_form" class="form-horizontal" method="POST" action="<?php echo site_url('user/login') ?>">
                         <div class="form-group">
@@ -45,15 +45,15 @@
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox" value="remember-me">
-                                    Remember Password
+                                    Recordar Contraseña
                                 </label>
                             </div>
                         </div>
                         <input class="btn btn-primary btn-block" type="submit" value="Iniciar Sesion" class="btn btn-primary" />
                     </form>
                     <div class="text-center">
-                        <a class="d-block small mt-3" href="register.html">Register an Account</a>
-                        <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+                        <a class="d-block small mt-3" href="register.html">Registrar cuenta</a>
+                        <a class="d-block small" href="forgot-password.html">Olvidó su contraseña?</a>
                     </div>
                 </div>
             </div>

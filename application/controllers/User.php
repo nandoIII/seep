@@ -45,12 +45,12 @@ class user extends MY_Controller {
         $data['class'] = $this->get_class_name();
         $data['user'] = $this->session->userdata('name');
         $data['roles'] = $GLOBALS['roles'];
-        $data['users'] = $this->user_model->get_user(['state' => 1]);
+        $data['users'] = $this->user_model->get_user(['active' => 1]);
         $data['sesion'] = $this->get_session_user_data();
 
-        $this->load->view('general/inc/header_view', $data);
+        $this->load->view('global/header_view', $data);
         $this->load->view('user/user_view');
-        $this->load->view('general/inc/footer_view');
+        $this->load->view('global/footer_view');
     }
 
     public function trash() {

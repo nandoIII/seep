@@ -32,7 +32,7 @@
                     <div class="card-body-icon">
                         <i class="fas fa-fw fa-list"></i>
                     </div>
-                    <div class="mr-5">11 En Proceso!</div>
+                    <div class="mr-5">11 En busca de Innovación!</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="#">
                     <span class="float-left">View Details</span>
@@ -64,7 +64,7 @@
                     <div class="card-body-icon">
                         <i class="fas fa-fw fa-life-ring"></i>
                     </div>
-                    <div class="mr-5">13 No Innovadoras!</div>
+                    <div class="mr-5">13 Sin Innovación!</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="#">
                     <span class="float-left">View Details</span>
@@ -136,23 +136,23 @@
                                 if ($row['puntaje'] <= 39) {
                                     $bgcolor = '#DF0101';
                                 } elseif ($row['puntaje'] >= 40 && $row['puntaje'] <= 59) {
-                                    $bgcolor = '#F7FE2E';
+                                    $bgcolor = '#FACC2E';
                                 } else {
-                                    $bgcolor = '#2EFE2E';
+                                    $bgcolor = '#04B404';
                                 }
 
                                 if (in_array("empresa/evaluar", $roles)) {
                                     echo '<td bgcolor="' . $bgcolor . '"><a href="' . site_url('empresa/graphics/' . $row['idempresa']) . '">' . $row['puntaje'] . '%</a></td>';
                                 } else {
-                                    echo '<td bgcolor="' . $bgcolor . '">' . $row['puntaje'] . '</td>';
+                                    echo '<td bgcolor="' . $bgcolor . '">' . $row['puntaje'] . '%</td>';
                                 }
                             }
 
                             echo in_array('empresa/editar', $roles) || in_array('empresa/trash', $roles) ? '<td>' : '';
                             echo in_array('empresa/editar', $roles) ? '<a href="' . site_url('empresa/editar') . '/' . $row['idempresa'] . '">Editar</a>' : '';
-                            echo in_array('empresa/editar', $roles) ? '<a href="' . site_url('empresa/editar_test') . '/' . $row['idempresa'] . '"> Editar Test </a>' : '';
+                            echo in_array('empresa/editar', $roles) ? '<a href="' . site_url('empresa/editar_test') . '/' . $row['idempresa'] . '"> Test </a>' : '';
                             echo in_array('empresa/editar', $roles) ? '<a href="' . site_url('empresa/getRadarDiagnostico') . '/' . $row['idempresa'] . '"> Radar </a>' : '';
-                            echo in_array('empresa/editar', $roles) ? '<a href="' . site_url('empresa/get_actividades') . '/' . $row['idempresa'] . '"> Actividades </a>' : '';
+                            echo in_array('empresa/editar', $roles) ? '<a href="' . site_url('empresa/get_actividades') . '/' . $row['idempresa'] . '"> Monitoreo </a>' : '';
                             echo in_array('empresa/trash', $roles) ? '&nbsp; <a id="' . $row['idempresa'] . '" class="trash">Trash</a>' : '';
                             echo in_array('empresa/editar', $roles) || in_array('empresa/trash', $roles) ? '</td>' : '';
                             echo '</tr>';
